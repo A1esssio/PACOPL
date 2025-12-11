@@ -1,14 +1,11 @@
 # process_data.py
 
-import json
-import sys
-
 # Импортируем все необходимые заготовки из предыдущих задач
+from cm_timer import cm_timer_1
 from field import field
 from gen_random import gen_random
-from unique import Unique
 from print_result import print_result
-from cm_timer import cm_timer_1
+from unique import Unique
 
 
 @print_result
@@ -16,7 +13,7 @@ def f1(arg):
     """
     Возвращает отсортированный список уникальных профессий (без учета регистра).
     """
-    return sorted(list(Unique(field(arg, 'job-name'), ignore_case=True)), key=str.lower)
+    return sorted(list(Unique(field(arg, "job-name"), ignore_case=True)), key=str.lower)
 
 
 @print_result
@@ -24,7 +21,7 @@ def f2(arg):
     """
     Фильтрует список, оставляя только профессии, начинающиеся со слова "программист".
     """
-    return list(filter(lambda x: x.lower().startswith('программист'), arg))
+    return list(filter(lambda x: x.lower().startswith("программист"), arg))
 
 
 @print_result
@@ -32,7 +29,7 @@ def f3(arg):
     """
     Добавляет к каждой профессии "с опытом Python".
     """
-    return list(map(lambda x: x + ' с опытом Python', arg))
+    return list(map(lambda x: x + " с опытом Python", arg))
 
 
 @print_result
@@ -44,17 +41,14 @@ def f4(arg):
     return [f"{prof}, зарплата {salary} руб." for prof, salary in zip(arg, salaries)]
 
 
-if __name__ == '__main__':
-    # Для демонстрации работы создадим тестовые данные,
-    # имитирующие структуру файла data_light.json
-
+if __name__ == "__main__":
     mock_data = [
-        {'job-name': 'Программист Python', 'salary': '150000'},
-        {'job-name': 'Аналитик данных', 'salary': '120000'},
-        {'job-name': 'программист C++', 'salary': '180000'},
-        {'job-name': 'Инженер-программист', 'salary': '170000'},
-        {'job-name': 'Программист Java', 'salary': '190000'},
-        {'job-name': 'Программист Python', 'salary': '160000'},  # Дубликат
+        {"job-name": "Программист Python", "salary": "150000"},
+        {"job-name": "Аналитик данных", "salary": "120000"},
+        {"job-name": "программист C++", "salary": "180000"},
+        {"job-name": "Инженер-программист", "salary": "170000"},
+        {"job-name": "Программист Java", "salary": "190000"},
+        {"job-name": "Программист Python", "salary": "160000"},  # Дубликат
     ]
 
     print("--- Запуск цепочки обработки с тестовыми данными ---")

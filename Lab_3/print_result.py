@@ -29,28 +29,25 @@ def print_result(func):
 
 
 # Блок main для проверки декоратора
-if __name__ == '__main__':
+if __name__ == "__main__":
+
     @print_result
     def test_1():
         return 1
 
-
     @print_result
     def test_2():
-        return 'iu5'
-
+        return "iu5"
 
     @print_result
     def test_3():
-        return {'a': 1, 'b': 2}
-
+        return {"a": 1, "b": 2}
 
     @print_result
     def test_4():
         return [1, 2]
 
-
-    print('--- Запуск тестов для декоратора print_result ---\n')
+    print("--- Запуск тестов для декоратора print_result ---\n")
     test_1()
     print("-" * 20)
     test_2()

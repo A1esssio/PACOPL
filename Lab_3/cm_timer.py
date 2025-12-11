@@ -27,7 +27,7 @@ def cm_timer_2():
         print(f"time: {elapsed_time:.4f}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("--- Тестирование cm_timer_1 (класс) ---")
     with cm_timer_1():
         time.sleep(1.2)
